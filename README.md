@@ -11,3 +11,6 @@ Design your programs so that they follow the following steps:
 These are just guidelines, and you should think carefully about step 2.
 ## Output
 Your output file MUST be in the same format as the input files and matrix values must output exactly four decimal points of precision using at most ten characters, i.e., use the "%10.4f" printf pattern when outputting values.
+## Parallelize approach
+For matrix matrix multiplication, the second matrix have many jumps which slow down the performance. So I choose transpose the second matrix. And I split all data equally to each thread. In a word, I transpose the second matrix to minimize cache line jump time, and use SPMD (single program multiple data)to control every thread want should do.
+
